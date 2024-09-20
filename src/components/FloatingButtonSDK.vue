@@ -1,20 +1,27 @@
 <template>
   <div data-html2canvas-ignore="true">
     <!-- 浮动按钮 -->
+    <selectCapture ref="selectCaptureRef" @addImage="addImage"></selectCapture>
+
     <div class="float-button">
-      <selectCapture @addImage="addImage"></selectCapture>
-      <n-button @click="scrollSeceenshot">滚动截图</n-button>
-      <n-button type="primary" @click="openModal">
-        分析22
-      </n-button>
+      <NPopover trigger="hover" placement="top">
+        <template #trigger>
+          <n-button type="primary" @click="openModal">
+            智能分析
+            <NBadge :value="srcList.length"></NBadge>
+          </n-button>
+        </template>
+        <n-space vertical>
+          <n-button @click="startSelection">选择截图</n-button>
+          <n-button @click="scrollSeceenshot">滚动截图</n-button>
+          <n-button @click="openModal">分析预览</n-button>
+        </n-space>
+      </NPopover>
     </div>
 
 
     <!-- 模态框 -->
     <n-modal v-model:show="isModalVisible" preset="card" title="智能分析" :footer="null" class="analysis-modal">
-      <template #header-extra>
-        <n-button strong secondary>添加图片</n-button>
-      </template>
       <n-scrollbar class="screenshot-scroll" trigger="none">
         <div class="screenshot-container">
 
@@ -51,6 +58,7 @@ const srcList = ref([]);
 const currentSrc = ref(null);
 const croper = ref(null);
 const analysisResult = ref(null);
+const selectCaptureRef = ref(null);
 
 const badgeValue = computed(() => {
   return srcList.value.length
@@ -101,6 +109,10 @@ watch(isModalVisible, () => {
   saveLoading.value = false;
 })
 
+const startSelection = () => {
+  selectCaptureRef.value.startSelection();
+}
+
 const addImage = (src) => {
   srcList.value.push(src);
 }
@@ -138,7 +150,6 @@ function base64ToCanvas(base64) {
   const canvas = document.createElement('canvas');
   canvas.width = img.width;  // 设置 canvas 尺寸等于图片尺寸
   canvas.height = img.height;
-
   const ctx = canvas.getContext('2d');
 
   ctx.drawImage(img, 0, 0, img.width, img.height);
@@ -239,8 +250,8 @@ function handleDelete(index) {
 <style>
 .float-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 90px;
+  right: 50px;
   display: flex;
   flex-direction: column;
 }
