@@ -1,8 +1,11 @@
 {
   "name": "analysis-image",
-  "private": true,
   "version": "1.0.0",
-  "type": "module",
+  "main": "dist/analysis-image-sdk.umd.js",
+  "module": "dist/analysis-image-sdk.esm.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -14,7 +17,6 @@
     "axios": "^1.7.7",
     "html2canvas": "^1.4.1",
     "naive-ui": "^2.39.0",
-    "picojs": "^1.0.0",
     "vue": "^3.4.37"
   },
   "devDependencies": {

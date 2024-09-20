@@ -20,9 +20,6 @@ dependencies:
   naive-ui:
     specifier: ^2.39.0
     version: 2.39.0(vue@3.5.6)
-  picojs:
-    specifier: ^1.0.0
-    version: 1.0.0
   vue:
     specifier: ^3.4.37
     version: 3.5.6
@@ -768,10 +765,6 @@ packages:
 
   /picocolors@1.1.0:
     resolution: {integrity: sha512-TQ92mBOW0l3LeMeyLV6mzy/kWr8lkd/hp3mTg7wYK7zJhuBStmGMBG0BdeDZS/dZx1IukaX6Bk11zcln25o1Aw==}
-
-  /picojs@1.0.0:
-    resolution: {integrity: sha512-RRYuV4QFjGfGYLO8EB4lt1x2qFmU1H+QX/Y/SVijNADaxxMoIYvPq+XPRwS5DFDyGopLjGmpnNMvBhE4gZ1h1g==}
-    dev: false
 
   /postcss@8.4.47:
     resolution: {integrity: sha512-56rxCq7G/XfB4EkXq9Egn5GCqugWvDFjafDOThIdMBsI15iqPqR5r15TfSr1YPYeEI19YeaXMCbY6u88Y76GLQ==}
