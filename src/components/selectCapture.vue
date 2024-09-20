@@ -1,5 +1,4 @@
 <template>
-  <n-button @click="startSelection">选择截图</n-button>
   <div
     v-if="isSelecting"
     class="selection-overlay"

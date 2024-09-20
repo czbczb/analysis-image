@@ -41,12 +41,10 @@
 </template>
 <script setup>
 import { ref, h, watch, computed } from 'vue';
-import { NButton, NModal, NSpace, NScrollbar, NCard, NImage, useMessage, NFloatButton, NBadge, NPopover } from 'naive-ui';
+import { NButton, NModal, NSpace, NScrollbar, NCard, NImage, useMessage, NBadge, NPopover } from 'naive-ui';
 import html2canvas from 'html2canvas';
-import { ClipboardOutline, CropSharp } from "@vicons/ionicons5";
+import { ClipboardOutline } from "@vicons/ionicons5";
 import axios from 'axios';
-import Cropper from 'cropperjs';
-import 'cropperjs/dist/cropper.css';
 import selectCapture from './selectCapture.vue'
 
 const message = useMessage()
@@ -72,20 +70,6 @@ const renderToolbar = ({ nodes }) => {
     nodes.zoomOut,
     nodes.zoomIn,
     nodes.download,
-    h(
-      NButton,
-      {
-        circle: true,
-        type: "primary",
-        style: { marginLeft: "12px" },
-        onClick: () => {
-          cropImage()
-        }
-      },
-      {
-        icon: () => h(CropSharp)
-      }
-    ),
     h(
       NButton,
       {
@@ -141,45 +125,6 @@ const openModal = async () => {
 
 const setCurrentImage = (src) => {
   currentSrc.value = src;
-}
-
-function base64ToCanvas(base64) {
-  // 创建一个新的 Image 对象
-  const img = new Image();
-  img.src = base64;
-  const canvas = document.createElement('canvas');
-  canvas.width = img.width;  // 设置 canvas 尺寸等于图片尺寸
-  canvas.height = img.height;
-  const ctx = canvas.getContext('2d');
-
-  ctx.drawImage(img, 0, 0, img.width, img.height);
-  return canvas
-}
-
-const cropImage = () => {
-  console.log(imageRef.value[0])
-  const cropper = new Cropper(imageRef.value, {
-    aspectRatio: 1, // 可调整裁剪框比例
-    viewMode: 1,    // 视图模式，控制图像的缩放
-    dragMode: 'crop',  // 允许拖动裁剪框
-    movable: true,  // 图像是否可移动
-    zoomable: true, // 允许缩放图像
-    scalable: true, // 允许缩放裁剪框
-    rotatable: true, // 允许旋转图片
-    cropBoxMovable: true, // 裁剪框是否可拖动
-    cropBoxResizable: true, // 允许调整裁剪框的大小
-
-    crop(event) {
-      console.log(event.detail.x);
-      console.log(event.detail.y);
-      console.log(event.detail.width);
-      console.log(event.detail.height);
-      console.log(event.detail.rotate);
-      console.log(event.detail.scaleX);
-      console.log(event.detail.scaleY);
-    },
-  });
-
 }
 
 

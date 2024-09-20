@@ -14,9 +14,6 @@ dependencies:
   axios:
     specifier: ^1.7.7
     version: 1.7.7
-  cropperjs:
-    specifier: ^1.6.2
-    version: 1.6.2
   html2canvas:
     specifier: ^1.4.1
     version: 1.4.1
@@ -566,10 +563,6 @@ packages:
     engines: {node: '>= 0.8'}
     dependencies:
       delayed-stream: 1.0.0
-    dev: false
-
-  /cropperjs@1.6.2:
-    resolution: {integrity: sha512-nhymn9GdnV3CqiEHJVai54TULFAE3VshJTXSqSJKa8yXAKyBKDWdhHarnlIPrshJ0WMFTGuFvG02YjLXfPiuOA==}
     dev: false
 
   /css-line-break@2.1.0:
