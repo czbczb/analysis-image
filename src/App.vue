@@ -1,5 +1,5 @@
 <script setup>
-import FloatingButtonSDK from './components/FloatingButtonSDK.vue';
+import AnalysisImageSDK from './components/AnalysisImageSDK.vue';
 import { NMessageProvider } from 'naive-ui';
 </script>
 
@@ -104,7 +104,7 @@ import { NMessageProvider } from 'naive-ui';
 
     </div>
     <h1>gogogo</h1>
-    <FloatingButtonSDK></FloatingButtonSDK>
+    <AnalysisImageSDK></AnalysisImageSDK>
   </n-message-provider>
     
 </template>
