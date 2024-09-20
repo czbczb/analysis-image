@@ -195,8 +195,8 @@ function handleDelete(index) {
 <style>
 .float-button {
   position: fixed;
-  bottom: 90px;
-  right: 50px;
+  bottom: 30px;
+  right: 10px;
   display: flex;
   flex-direction: column;
 }
