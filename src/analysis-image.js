@@ -1,5 +1,4 @@
 import App from '../src/App.vue'
-import { createPinia } from 'pinia'
 
 import { createApp } from 'vue'
 
@@ -15,7 +14,6 @@ class AnalysisImageSDK {
   static renderDom(option) {
     const { dom, ...restOpt } = option
     const app = createApp(App, restOpt)
-    app.use(createPinia())
 
     if (dom) {
       app.mount(dom)
