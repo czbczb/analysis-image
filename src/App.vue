@@ -7,7 +7,6 @@ import { NMessageProvider } from 'naive-ui';
   <n-message-provider>
     <AnalysisImageSDK></AnalysisImageSDK>
   </n-message-provider>
-    
 </template>
 
 <style scoped>

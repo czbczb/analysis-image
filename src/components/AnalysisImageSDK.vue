@@ -1,3 +1,4 @@
+<!-- analysisImageSDK.vue -->
 <template>
   <div data-html2canvas-ignore="true">
     <!-- 浮动按钮 -->
@@ -161,35 +162,6 @@ function dataURLToBlob(dataurl) {
 function handleDelete(index) {
   srcList.value.splice(index, 1);
 }
-
-
-
-// const handleMouseDown = (event) => {
-//   const canvasDom = event.target;
-//   let offsetX = event.offsetX;
-//   let offsetY = event.offsetY;
-
-//   const handleMouseMove = (moveEvent) => {
-//     const newOffsetX = moveEvent.clientX - offsetX;
-//     const newOffsetY = moveEvent.clientY - offsetY;
-//     canvasDom.style.width = newOffsetX + 'px';
-//     canvasDom.style.height = newOffsetY + 'px';
-//     offsetX = newOffsetX;
-//     offsetY = newOffsetY;
-//   };
-
-//   const handleMouseUp = () => {
-//     document.removeEventListener('mousemove', handleMouseMove);
-//     document.removeEventListener('mouseup', handleMouseUp);
-//   };
-
-//   document.addEventListener('mousemove', handleMouseMove);
-//   document.addEventListener('mouseup', handleMouseUp);
-// };
-
-// onMounted(() => {
-//   canvas.value?.addEventListener('mousedown', handleMouseDown);
-// });
 </script>
 
 <style>

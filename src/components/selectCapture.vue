@@ -1,3 +1,4 @@
+<!-- selectCapture.vue -->
 <template>
   <div
     v-if="isSelecting"
